@@ -19,7 +19,7 @@ export function setStoredCities(cities: string[]): Promise<void> {
   }
   return new Promise((resolve) => {
     chrome.storage.local.set(vals, () => {
-      resolve()
+      resolve() // resolve function is needed for the handler that is waiting for the promise to complete will never resolve
     })
   })
 }
@@ -39,7 +39,7 @@ export function setStoredOptions(options: LocalStorageOptions): Promise<void> {
   }
   return new Promise((resolve) => {
     chrome.storage.local.set(vals, () => {
-      resolve()
+      resolve() // resolve function is needed for the handler that is waiting for the promise to complete will never resolve
     })
   })
 }
